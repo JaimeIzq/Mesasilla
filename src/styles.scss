@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+:root, [data-bs-theme=light] {
+  --doc-bg-color: #ddd;
+  --cont-bg-color: #f0f0f0;
+  --border-color: #dee2e6;
+}
+
+[data-bs-theme=dark] {
+  --doc-bg-color: #222;
+  --cont-bg-color: #444;
+  --border-color: #4a4b4c;
+}
+
+body {
+  margin: 0;
+  background-color: var(--doc-bg-color);
+
+  header {
+    display: block;
+    position: sticky;
+
+    margin: 10px auto;
+    top: 10px;
+    left: 0;
+    right: 0;
+
+    width: 70%;
+    z-index: 1;
+  }
+
+  div.content {
+    margin: 10px auto;
+    width: 60%;
+
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--cont-bg-color);
+
+    min-height: 800vh;
+  }
+
+}
+

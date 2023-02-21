@@ -1,7 +1,7 @@
 # Mesilla Web app
-## Una aplicacion web con Angualar, and PrimeNG
+## Una aplicacion web con Angualar y PrimeNG
 
-Este proyecto se trata de un ejemplo de aplicacion web de una empresa de sillas ***Mesilla***.
+Este proyecto se trata de un ejemplo de aplicacion web de una empresa de sillas ***Mesasilla***.
 
 Este proytecto ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
@@ -11,7 +11,7 @@ Ejecuta `ng serve` para iniciar un servidor de desarrollo. Dirijete a `http://lo
 
 ## Code scaffolding
 
-Ejecuta `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecuta `ng generate component component-name` para generar un componente nuevo. También puede usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Compilar
 
@@ -23,7 +23,7 @@ Ejecuta `ng test` para realizar los test via [Karma](https://karma-runner.github
 
 ## Running end-to-end tests
 
-Ejecuta `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ejecuta `ng e2e` para ejecutar las pruebas de extremo a extremo a través de una plataforma de su elección. Para usar este comando, primero debe agregar un paquete que implemente capacidades de prueba de un extremo a otro.
 
 ## Further help
 

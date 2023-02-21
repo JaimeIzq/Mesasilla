@@ -9,16 +9,17 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Mesilla';
+  title = 'Mesasilla';
   // Menubar items
   items!: MenuItem[];
 
   ngOnInit() {
     this.items = [
-      {
-        label: 'Home',
-        url: '/home',
+      { label: 'Home', url: '/home',
         icon: 'pi pi-fw pi-home',
+      },
+      { label: 'Catálogo', url: '/catalogo',
+        icon: 'pi pi-fw pi-list',
       }
     ];
   }

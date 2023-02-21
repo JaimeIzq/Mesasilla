@@ -1,19 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-:root, [data-bs-theme=light] {
-  --doc-bg-color: #ddd;
-  --cont-bg-color: #f0f0f0;
-  --border-color: #dee2e6;
+:root {
+  --border-radius: 4px;
 }
 
-[data-bs-theme=dark] {
-  --doc-bg-color: #222;
-  --cont-bg-color: #444;
-  --border-color: #4a4b4c;
+:root, [theme=light] {
+  --body-bg-color: var(--gray-300);
+  --color: black;
+  --navbar-bg-color: var(--gray-50);
+  --primary-bg-color: var(--gray-100);
+  --secondary-bg-color: var(--gray-200);
+}
+
+[theme=dark] {
+  
+  --body-bg-color: var(--gray-800);
+  --color: black;
+  --navbar-bg-color: var(--gray-600);
+  --primary-bg-color: var(--gray-700);
+  --secondary-bg-color: var(--gray-500);
 }
 
 body {
   margin: 0;
-  background-color: var(--doc-bg-color);
+  color: var(--color);
+  background-color: var(--body-bg-color);
 
   header {
     display: block;
@@ -34,10 +44,25 @@ body {
 
     padding: 0.5rem;
     border-radius: 6px;
-    border: 1px solid var(--border-color);
-    background-color: var(--cont-bg-color);
 
-    min-height: 90vh;
+    min-height: 80vh;
+    
+    background-color: var(--primary-bg-color);
   }
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  & > h1 {
+    margin: 0 25px 0 0;
+  }
+}
+
+.inline-flex {
+  display: flex;
+  gap: 10px;
 }
 

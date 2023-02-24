@@ -1,40 +1,50 @@
-<section class="">
-  <form>
-    <input type="text" name="name" pInputText placeholder="Nombre"/>
-    <input type="password" name="password" pPassword placeholder="Contraseña"/>
-    <button pButton type="submit" icon="pi pi-check-circle" class="p-button-info">Enviar</button>     
-  </form> 
-</section>
-
-<div class="card">
-  <h5>MESASILA</h5>
-  <div class="grid">
-    <div class="col-8 flex align-items-center justify-content-center">
-      <div class="p-fluid">
+<div class="card m-4">
+  <div class="grid justify-content-center">
+    <div class="col-4 flex align-self-start justify-content-center">
+      <form id="loginForm" class="p-fluid g-2">
+        <h3>Login</h3>
         <div class="p-field">
-          <label for="email">Email:  </label>
+          <label for="email">Email:</label>
           <input pInputText id="email" type="text" />
         </div>
-        <br>
-        <div class="p-fluid">
-          <label for="password">Password:   </label>
+        <div class="p-field">
+          <label for="password">Password:</label>
           <input pInputText id="password" type="password" />
         </div>
-        <br>
-        <p-button label="Login"></p-button>
-      </div>
+        <p-button onclick="loginForm.submit()" label="Login"></p-button>
+      </form>
     </div>
     <div class="col-2">
-      <p-divider layout="vertical">
+      <p-divider class="round" layout="vertical">
         <b>OR</b>
       </p-divider>
     </div>
-    <div class="col-5 flex align-items-center justify-content-center">
-      <p-button
-        label="Registrese"
-        icon="pi pi-user-plus"
-        styleClass="p-button-success"
-      ></p-button>
+    <div class="col-4 flex align-self-start justify-content-center">
+      <form id="registerForm" class="p-fluid">
+        <h3>Register</h3>
+        <div class="p-field">
+          <label for="nombre">Nombre:</label>
+          <input pInputText id="nombre" type="text" />
+        </div>
+        <div class="p-field">
+          <label for="email">Email:</label>
+          <input pInputText id="email" type="email" />
+        </div>
+        <div class="p-field">
+          <label for="password1">Contraseña:</label>
+          <input pInputText id="password1" type="password" />
+        </div>
+        <div class="p-field">
+          <label for="password2">Confirma la Contraseña:</label>
+          <input pInputText id="password2" type="password" />
+        </div>
+        <p-button
+          label="Registrese"
+          icon="pi pi-user-plus"
+          styleClass="p-button-success"
+          onclick="registerForm.submit()"
+        ></p-button>
+      </form>
     </div>
   </div>
 </div>

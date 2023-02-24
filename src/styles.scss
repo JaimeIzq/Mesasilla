@@ -12,7 +12,7 @@
 }
 
 [theme=dark] {
-  
+
   --body-bg-color: var(--gray-800);
   --color: black;
   --navbar-bg-color: var(--gray-600);
@@ -46,7 +46,7 @@ body {
     border-radius: 6px;
 
     min-height: 80vh;
-    
+
     background-color: var(--primary-bg-color);
   }
 }
@@ -66,3 +66,11 @@ body {
   gap: 10px;
 }
 
+.p-divider.p-divider-vertical div.p-divider-content {
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.p-field {
+  margin-block: 0.5rem;
+}

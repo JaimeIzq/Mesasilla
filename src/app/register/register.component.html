@@ -1,0 +1,25 @@
+<form id="registerForm" class="p-fluid">
+  <h3>Register</h3>
+  <div class="p-field">
+    <label for="nombre">Nombre:</label>
+    <input pInputText id="nombre" type="text" />
+  </div>
+  <div class="p-field">
+    <label for="email">Email:</label>
+    <input pInputText id="email" type="email" />
+  </div>
+  <div class="p-field">
+    <label for="password1">Contraseña:</label>
+    <input pInputText id="password1" type="password" />
+  </div>
+  <div class="p-field">
+    <label for="password2">Confirma la Contraseña:</label>
+    <input pInputText id="password2" type="password" />
+  </div>
+  <p-button
+    label="Registrese"
+    icon="pi pi-user-plus"
+    styleClass="p-button-success"
+    onclick="registerForm.submit()"
+  ></p-button>
+</form>

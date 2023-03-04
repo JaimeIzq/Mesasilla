@@ -1,0 +1,17 @@
+<header>
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <div class="logo">
+        <img src="assets/img/Mesasila_logo.png" height="40" class="mr-2" alt="logo"/>
+        <h1>{{ title }}</h1>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <!-- <input type="text" pInputText placeholder="Search"> -->
+        <div class="inline-flex">
+          <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-info"></button>
+          <button pButton pRipple type="button" icon="pi pi-check-circle" class="p-button-rounded p-button-warning"></button>
+        </div>
+      </ng-template>
+  </p-menubar>
+</header>

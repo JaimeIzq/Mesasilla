@@ -1,18 +1,7 @@
 <div class="card m-4">
   <div class="grid justify-content-center">
     <div class="col-4 flex align-self-start justify-content-center">
-      <form id="loginForm" class="p-fluid g-2">
-        <h3>Login</h3>
-        <div class="p-field">
-          <label for="email">Email:</label>
-          <input pInputText id="email" type="text" />
-        </div>
-        <div class="p-field">
-          <label for="password">Password:</label>
-          <input pInputText id="password" type="password" />
-        </div>
-        <p-button onclick="loginForm.submit()" label="Login"></p-button>
-      </form>
+      <app-login></app-login>
     </div>
     <div class="col-2">
       <p-divider class="round" layout="vertical">
@@ -20,31 +9,7 @@
       </p-divider>
     </div>
     <div class="col-4 flex align-self-start justify-content-center">
-      <form id="registerForm" class="p-fluid">
-        <h3>Register</h3>
-        <div class="p-field">
-          <label for="nombre">Nombre:</label>
-          <input pInputText id="nombre" type="text" />
-        </div>
-        <div class="p-field">
-          <label for="email">Email:</label>
-          <input pInputText id="email" type="email" />
-        </div>
-        <div class="p-field">
-          <label for="password1">Contraseña:</label>
-          <input pInputText id="password1" type="password" />
-        </div>
-        <div class="p-field">
-          <label for="password2">Confirma la Contraseña:</label>
-          <input pInputText id="password2" type="password" />
-        </div>
-        <p-button
-          label="Registrese"
-          icon="pi pi-user-plus"
-          styleClass="p-button-success"
-          onclick="registerForm.submit()"
-        ></p-button>
-      </form>
+      <app-register></app-register>
     </div>
   </div>
 </div>

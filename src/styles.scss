@@ -3,7 +3,8 @@
   --border-radius: 4px;
 }
 
-:root, [theme=light] {
+:root,
+[theme="light"] {
   --body-bg-color: var(--gray-300);
   --color: black;
   --navbar-bg-color: var(--gray-50);
@@ -11,8 +12,7 @@
   --secondary-bg-color: var(--gray-200);
 }
 
-[theme=dark] {
-
+[theme="dark"] {
   --body-bg-color: var(--gray-800);
   --color: black;
   --navbar-bg-color: var(--gray-600);
@@ -24,30 +24,72 @@ body {
   margin: 0;
   color: var(--color);
   background-color: var(--body-bg-color);
+}
 
-  header {
-    display: block;
-    position: sticky;
+header {
+  display: block;
+  position: sticky;
 
-    margin: 10px auto;
-    top: 10px;
-    left: 0;
-    right: 0;
+  margin: 10px auto;
+  top: 10px;
+  left: 0;
+  right: 0;
 
-    width: 70%;
-    z-index: 1;
+  width: 75%;
+  z-index: 1;
+}
+
+div.content {
+  margin: 10px auto;
+  width: 60%;
+
+  padding: 0.5rem;
+  border-radius: 6px;
+
+  min-height: 80vh;
+
+  background-color: var(--primary-bg-color);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  margin: 10px 0;
+
+  & > .footer-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    gap: 25px;
+
+    &.left {
+      margin-left: 5%;
+      // margin-right: auto;
+    }
+
+    &.right {
+      // margin-left: auto;
+      margin-right: 5%;
+    }
+
+    & p {
+      margin: 0;
+    }
   }
 
-  div.content {
-    margin: 10px auto;
-    width: 60%;
-
-    padding: 0.5rem;
-    border-radius: 6px;
-
-    min-height: 80vh;
-
-    background-color: var(--primary-bg-color);
+  @media screen and (max-width: 1400px) {
+    & > .footer-info {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }
 
@@ -58,6 +100,41 @@ body {
 
   & > h1 {
     margin: 0 25px 0 0;
+  }
+}
+
+.logo-vert {
+  display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+
+  & > img {
+    margin: 0 auto;
+  }
+
+  & > h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  header {
+    width: 90%;
+  }
+  div.content {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    width: 98%;
+  }
+
+  div.content {
+    width: 96%;
   }
 }
 
@@ -73,4 +150,9 @@ body {
 
 .p-field {
   margin-block: 0.5rem;
+}
+
+// Primeng menubar fix
+.p-menubar-root-list {
+  gap: 0.5rem;
 }

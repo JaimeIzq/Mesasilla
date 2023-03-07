@@ -1,6 +1,7 @@
 // Angular Imports
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 // PrimeNG Imports
 import { ButtonModule } from 'primeng/button';
@@ -9,6 +10,7 @@ import { RippleModule } from 'primeng/ripple';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from "primeng/divider";
+import { GMapModule } from 'primeng/gmap';
 
 // Local Imports
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +42,9 @@ import { FooterComponent } from './footer/footer.component';
     RippleModule,
     InputTextModule,
     PasswordModule,
-    DividerModule
+    DividerModule,
+		GMapModule,
+		GoogleMapsModule
   ],
   providers: [
 

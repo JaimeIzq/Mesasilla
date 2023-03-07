@@ -1,26 +1,43 @@
 <footer class="layout-footer">
-  <div class="footer-info left">
-    <p>Direccion:</p>
-  </div>
-  <div class="logo-vert center">
-    <img
-      [src]="logo"
-      height="40"
-      alt="logo"
-      align="center"
-    />
-    <h1>{{ title }}</h1>
-  </div>
-  <div class="footer-info right">
-    <p>
-      <i class="pi pi-phone" ></i>
-      Telf:<br/>
-      (+0) 123-456-789
-    </p>
-    <p>
-      <i class="pi pi-envelope"></i>
-      Email:<br/>
-      <a href="mailto:info@mesasilla.com">info@mesasilla.com</a>
-    </p>
-  </div>
+	<div class="footer-info left">
+		<button
+			pButton
+			pRipple
+			type="button"
+			icon="pi pi-map"
+			class="p-button-rounded p-button-secondary p-button-outlined"
+		></button>
+		<p>
+			<i class="pi pi-map-marker"></i>
+			Direccion:<br />
+			{{ address }}
+		</p>
+	</div>
+	<div class="logo-vert center">
+		<img [src]="logo" height="40" alt="logo" align="center" />
+		<h1>{{ title }}</h1>
+	</div>
+	<div class="footer-info right">
+		<p>
+			<i class="pi pi-phone"></i>
+			Telf:<br />
+			{{ phone }}
+		</p>
+		<p>
+			<i class="pi pi-envelope"></i>
+			Email:<br />
+			<a href="mailto:{{ email }}">{{ email }}</a>
+		</p>
+	</div>
+	<div class="modal-mapa">
+		<google-map
+			height="500px"
+			width="900px"
+			[center]="center"
+			[zoom]="zoom"
+			(mapClick)="moveMap($event)"
+			(mapMousemove)="move($event)"
+		>
+		</google-map>
+	</div>
 </footer>

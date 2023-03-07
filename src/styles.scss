@@ -67,16 +67,14 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    width: 300px;
     gap: 25px;
 
     &.left {
       margin-left: 5%;
-      // margin-right: auto;
     }
 
     &.right {
-      // margin-left: auto;
       margin-right: 5%;
     }
 
@@ -85,10 +83,16 @@ footer {
     }
   }
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 900px) {
     & > .footer-info {
-      flex-direction: column;
-      gap: 20px;
+      &.right {
+        flex-direction: column;
+        margin: 0;
+      }
+      &.left {
+        margin-left: 25px;
+      }
+      gap: 10px;
     }
   }
 }
@@ -136,6 +140,23 @@ footer {
   div.content {
     width: 96%;
   }
+}
+
+.modal-mapa {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	backdrop-filter	: brightness(0.5);
+	z-index: 2;
+
+	google-map {
+		height: 100%;
+	}
+
 }
 
 .inline-flex {

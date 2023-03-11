@@ -1,11 +1,12 @@
-<footer class="layout-footer">
+<footer>
 	<div class="footer-info left">
 		<button
 			pButton
 			pRipple
 			type="button"
 			icon="pi pi-map"
-			class="p-button-rounded p-button-secondary p-button-outlined"
+			(click)="showDialog()"
+			class="p-button-rounded p-button-secondary p-button-outlined p-button-sm"
 		></button>
 		<p>
 			<i class="pi pi-map-marker"></i>
@@ -29,15 +30,23 @@
 			<a href="mailto:{{ email }}">{{ email }}</a>
 		</p>
 	</div>
-	<div class="modal-mapa">
-		<google-map
-			height="500px"
-			width="900px"
-			[center]="center"
-			[zoom]="zoom"
-			(mapClick)="moveMap($event)"
-			(mapMousemove)="move($event)"
-		>
-		</google-map>
-	</div>
 </footer>
+<p-dialog
+	[modal]="true"
+	[(visible)]="show"
+	[draggable]="false"
+	[resizable]="false"
+>
+	<google-map [zoom]="zoom" [center]="center" [options]="options">
+		<map-marker #marker="mapMarker" [position]="center" [options]="options">
+		</map-marker>
+	</google-map>
+</p-dialog>
+
+<ng-template pTemplate="footer">
+	<tr>
+		<td colspan="3"></td>
+		<td>Total:$506,202</td>
+		<td>Min:$8,500</td>
+	</tr>
+</ng-template>

@@ -11,24 +11,28 @@ export class FooterComponent implements OnInit {
 	@Input() phone: string = '(+0) 123-456-789';
 	@Input() email: string = 'info@mesasilla.com';
 	@Input() address: string = 'A-1104, 50164 Monegrillo, Zaragoza';
+	@Input() longitude: number = -0.6785647;
+	@Input() latitude: number = 41.810912;
 
+	center = { lat: this.latitude, lng: this.longitude };
+	//Modal dialog status
+	show: boolean = false;
+ // declare center variable
+	zoom = 12;
 
-	ngOnInit(): void {}
-
-	display: any;
-	center: google.maps.LatLngLiteral = {
-			lat: 22.2736308,
-			lng: 70.7512555
+	options: google.maps.MapOptions = {
+		mapTypeId: 'roadmap',
+		disableDefaultUI: true,
+		zoomControl: true,
+		scrollwheel: false,
+		maxZoom: 15,
+		minZoom: 8,
 	};
 
-	zoom = 6;
+	ngOnInit(): void { }
 
-	moveMap(event: google.maps.MapMouseEvent) {
-			if (event.latLng != null) this.center = (event.latLng.toJSON());
+	// Change de status of the modal dialog to be visible.
+	showDialog() {
+		this.show = true;
 	}
-
-	move(event: google.maps.MapMouseEvent) {
-			if (event.latLng != null) this.display = event.latLng.toJSON();
-	}
-
 }

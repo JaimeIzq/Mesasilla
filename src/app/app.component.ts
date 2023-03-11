@@ -9,6 +9,11 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Mesasilla';
-
+  title: string = 'Mesasilla';
+	logo: string = '/assets/img/Mesasila_logo.png';
+	phone: string = '(+0) 987-654-321';
+	email: string = 'info+customer@mesasilla.com';
+	address: string = 'Calle Espiolla, 18, 50540 Borja, Zaragoza';
+	latitude: number = 41.8317582;
+	longitude: number = -1.53527;
 }

@@ -1,14 +1,18 @@
 // Angular Imports
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 // PrimeNG Imports
+import { RippleModule } from 'primeng/ripple';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
-import { RippleModule } from 'primeng/ripple';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from "primeng/divider";
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 // Local Imports
 import { AppRoutingModule } from './app-routing.module';
@@ -33,14 +37,17 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
+    RippleModule,
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
     MenubarModule,
-    RippleModule,
     InputTextModule,
     PasswordModule,
-    DividerModule
+    DividerModule,
+		DialogModule,
+		BrowserAnimationsModule,
+		GoogleMapsModule
   ],
   providers: [
 

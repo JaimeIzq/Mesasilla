@@ -1,158 +1,194 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --border-radius: 4px;
+	--border-radius: 4px;
 }
 
 :root,
 [theme="light"] {
-  --body-bg-color: var(--gray-300);
-  --color: black;
-  --navbar-bg-color: var(--gray-50);
-  --primary-bg-color: var(--gray-100);
-  --secondary-bg-color: var(--gray-200);
+	--body-bg-color: var(--gray-300);
+	--color: black;
+	--navbar-bg-color: var(--gray-50);
+	--primary-bg-color: var(--gray-100);
+	--secondary-bg-color: var(--gray-200);
 }
 
 [theme="dark"] {
-  --body-bg-color: var(--gray-800);
-  --color: black;
-  --navbar-bg-color: var(--gray-600);
-  --primary-bg-color: var(--gray-700);
-  --secondary-bg-color: var(--gray-500);
+	--body-bg-color: var(--gray-800);
+	--color: black;
+	--navbar-bg-color: var(--gray-600);
+	--primary-bg-color: var(--gray-700);
+	--secondary-bg-color: var(--gray-500);
+}
+
+html, body, app-root{
+	min-height: 100%;
+	margin: 0;
 }
 
 body {
-  margin: 0;
-  color: var(--color);
-  background-color: var(--body-bg-color);
+	margin: 0;
+	color: var(--color);
+	background-color: var(--body-bg-color);
 }
 
 header {
-  display: block;
-  position: sticky;
+	display: block;
+	position: sticky;
 
-  margin: 10px auto;
-  top: 10px;
-  left: 0;
-  right: 0;
+	margin: 10px auto;
+	top: 10px;
+	left: 0;
+	right: 0;
 
-  width: 75%;
-  z-index: 1;
+	width: 75%;
+	z-index: 1;
 }
 
 div.content {
-  margin: 10px auto;
-  width: 60%;
+	margin: 10px auto;
+	width: 60%;
 
-  padding: 0.5rem;
-  border-radius: 6px;
+	padding: 0.5rem;
+	border-radius: 6px;
 
-  min-height: 80vh;
+	min-height: 85vh;
 
-  background-color: var(--primary-bg-color);
+	background-color: var(--primary-bg-color);
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 
-  bottom: 0;
-  left: 0;
-  right: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 
-  width: 100%;
-  margin: 10px 0;
+	width: 100%;
+	margin: 10px 0;
 
-  & > .footer-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-    gap: 25px;
+	& > .footer-info {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		width: 300px;
+		gap: 25px;
 
-    &.left {
-      margin-left: 5%;
-      // margin-right: auto;
-    }
+		&.left {
+			margin-left: 5%;
+		}
 
-    &.right {
-      // margin-left: auto;
-      margin-right: 5%;
-    }
+		&.right {
+			margin-right: 5%;
+		}
 
-    & p {
-      margin: 0;
-    }
-  }
+		& p {
+			margin: 0;
+		}
+	}
+}
 
-  @media screen and (max-width: 1400px) {
-    & > .footer-info {
-      flex-direction: column;
-      gap: 20px;
-    }
-  }
+@media screen and (max-width: 1300px) {
+	header {
+		width: 90%;
+	}
+	div.content {
+		width: 800px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	header {
+		width: 98%;
+	}
+
+	div.content {
+		width: 96%;
+	}
+}
+
+@media screen and (max-width: 900px) and (min-width: 700px) {
+	footer > .footer-info {
+		gap: 10px;
+		width: 250px;
+
+		&.right {
+			flex-direction: column;
+			margin: 0;
+		}
+		&.left {
+			margin-left: 25px;
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	footer {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+
+		& > div.footer-info {
+			width: 100%;
+			&.right {
+				margin-right: 0;
+			}
+			&.left {
+				margin-left: 0;
+			}
+		}
+	}
 }
 
 .logo {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 
-  & > h1 {
-    margin: 0 25px 0 0;
-  }
+	& > h1 {
+		margin: 0 25px 0 0;
+	}
 }
 
 .logo-vert {
-  display: flex;
+	display: flex;
 	flex-direction: column;
 	align-content: center;
 	justify-content: center;
 
-  & > img {
-    margin: 0 auto;
-  }
+	& > img {
+		margin: 0 auto;
+	}
 
-  & > h1 {
-    text-align: center;
-    margin: 0 auto;
-  }
+	& > h1 {
+		text-align: center;
+		margin: 0 auto;
+	}
 }
 
-@media screen and (max-width: 1300px) {
-  header {
-    width: 90%;
-  }
-  div.content {
-    width: 800px;
-  }
+.close-gmap-modal {
+	position: absolute;
+	background: #0f0 !important;
+	margin: 10px;
+	background-color: darkblue;
+	z-index: 4;
 }
-
-@media screen and (max-width: 1000px) {
-  header {
-    width: 98%;
-  }
-
-  div.content {
-    width: 96%;
-  }
-}
-
 .inline-flex {
-  display: flex;
-  gap: 10px;
+	display: flex;
+	gap: 10px;
 }
 
 .p-divider.p-divider-vertical div.p-divider-content {
-  padding: 0.5rem;
-  border-radius: 50%;
+	padding: 0.5rem;
+	border-radius: 50%;
 }
 
 .p-field {
-  margin-block: 0.5rem;
+	margin-block: 0.5rem;
 }
 
 // Primeng menubar fix
 .p-menubar-root-list {
-  gap: 0.5rem;
+	gap: 0.5rem;
 }

@@ -9,7 +9,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = 'Mesasilla';
+	title: string = 'Mesasilla';
 	logo: string = '/assets/img/Mesasila_logo.png';
 	phone: string = '(+0) 987-654-321';
 	email: string = 'info+customer@mesasilla.com';

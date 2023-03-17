@@ -1,1 +1,32 @@
-<h1 style="text-align: center;">WIP!!!</h1>
+<h1 style="text-align: center">Contacta con nosotros</h1>
+<div class="contacto-contenedor">
+	<google-map [zoom]="zoom" [center]="center" [options]="options">
+		<map-marker #marker="mapMarker" [position]="center" [options]="options">
+		</map-marker>
+	</google-map>
+	<div class="contacto-info">
+		<div class="logo-vert">
+			<img [src]="logo" height="40" alt="logo" align="center" />
+			<h1>{{ title }}</h1>
+		</div>
+		<div>
+			<p>
+				<i class="pi pi-map-marker"></i>
+				Direccion:<br />
+				{{ address }}
+			</p>
+		</div>
+		<div>
+			<p>
+				<i class="pi pi-phone"></i>
+				Telf:<br />
+				{{ phone }}
+			</p>
+			<p>
+				<i class="pi pi-envelope"></i>
+				Email:<br />
+				<a href="mailto:{{ email }}">{{ email }}</a>
+			</p>
+		</div>
+	</div>
+</div>

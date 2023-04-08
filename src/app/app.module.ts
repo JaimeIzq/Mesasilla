@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // PrimeNG Imports
 import { RippleModule } from 'primeng/ripple';
@@ -12,7 +14,9 @@ import { PasswordModule } from 'primeng/password';
 import { DividerModule } from "primeng/divider";
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { DataViewModule } from 'primeng/dataview';
+import { RatingModule } from 'primeng/rating';
+import { TagModule } from 'primeng/tag';
 
 // Local Imports
 import { AppRoutingModule } from './app-routing.module';
@@ -47,7 +51,12 @@ import { FooterComponent } from './footer/footer.component';
     DividerModule,
 		DialogModule,
 		BrowserAnimationsModule,
-		GoogleMapsModule
+		GoogleMapsModule,
+		DataViewModule,
+		HttpClientModule,
+		RatingModule,
+		TagModule,
+		FormsModule,
   ],
   providers: [
 

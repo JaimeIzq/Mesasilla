@@ -47,13 +47,7 @@ header {
 div.content {
 	margin: 10px auto;
 	width: 60%;
-
-	padding: 0.5rem;
-	border-radius: 6px;
-
 	min-height: 85vh;
-
-	background-color: var(--primary-bg-color);
 }
 
 footer {
@@ -214,4 +208,14 @@ footer {
 // Primeng menubar fix
 .p-menubar-root-list {
 	gap: 0.5rem;
+}
+
+.min-h-16rem {
+	min-height: 16rem !important;
+}
+
+.card {
+	padding: 0.5rem;
+	border-radius: 6px;
+	background-color: var(--primary-bg-color);
 }

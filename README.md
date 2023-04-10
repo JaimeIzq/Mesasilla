@@ -1,4 +1,7 @@
 # Mesilla Web app
+
+![Preview home](./Preview.png)
+
 ## Una aplicacion web con Angualar y PrimeNG
 
 Este proyecto se trata de un ejemplo de aplicacion web de una empresa de sillas ***Mesasilla***.

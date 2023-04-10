@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FilterService } from 'primeng/api';
-import { Silla } from "../services/silla";
+import { Producto } from "../services/producto";
 
 //Servicio Catalogo
 import { CatalogoService } from "../services/catalogo.service";
@@ -19,15 +19,15 @@ import { DataViewLayoutOptions } from 'primeng/dataview';
 })
 export class CatalogoComponent implements OnInit {
 
-	sillas: Silla[] = [];
+	productos: Producto[] = [];
 
 	layout: string = 'list';
 
 	constructor(private catalogoService: CatalogoService) {}
 
 	ngOnInit(): void {
-		this.catalogoService.getSillasObs().subscribe({
-			next: (sillas: Silla[]) => this.sillas = sillas,
+		this.catalogoService.getProductosObs().subscribe({
+			next: (productos: Producto[]) => this.productos = productos,
 			error: (error: any) => console.error(error),
 			complete: () => console.log('Completado')
 		});

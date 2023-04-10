@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //Importamos el modelo
-import { Silla } from '../services/silla';
+import { Producto } from './producto';
 //Importamos HttpClient
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 //Nos traemos el objeto.
@@ -10,7 +10,7 @@ import { Observable, map } from 'rxjs';
 })
 export class CatalogoService {
   //Reutilizamos el modelo de datos de Silla.
-  loadedSillas: Silla[] = [];
+  loadedSillas: Producto[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -20,10 +20,10 @@ export class CatalogoService {
   getSillas() {
     console.log('Llamamos a getSillas');
     return this.http
-      .get<{ [key: string]: Silla }>('http://localhost:3000/catalogo/productos')
+      .get<{ [key: string]: Producto }>('http://localhost:3000/catalogo/productos')
       .pipe(
-        map((responseData: { [id: string]: Silla }) => {
-          const sillasArray: Silla[] = [];
+        map((responseData: { [id: string]: Producto }) => {
+          const sillasArray: Producto[] = [];
           for (const key in responseData) {
             console.log('Datos de Respuesta');
             console.log(responseData[key]);
@@ -37,17 +37,17 @@ export class CatalogoService {
       );
   }
 
-	getSillasPromesa():Promise<Silla[]> {
+	getSillasPromesa():Promise<Producto[]> {
     console.log('Llamamos a getSillas');
-		return new Promise<Silla[]>((resolve, reject) => {
-			
+		return new Promise<Producto[]>((resolve, reject) => {
+
 		});
 	}
 
-	getSillasObservable(): Observable<Silla[]> {
+	getSillasObservable(): Observable<Producto[]> {
     console.log('Llamamos a getSillas');
-		return new Observable<Silla[]>((observer) => {
-			let sillas: Silla[] = [];
+		return new Observable<Producto[]>((observer) => {
+			let sillas: Producto[] = [];
 			observer.next([]);
 		});
   }

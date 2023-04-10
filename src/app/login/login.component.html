@@ -1,12 +1,12 @@
 <form id="loginForm" class="p-fluid g-2">
   <h3>Login</h3>
   <div class="p-field">
-    <label for="email">Email:</label>
-    <input pInputText id="email" type="text" />
+    <label for="email">Username:</label>
+    <input pInputText #username id="username" type="text" />
   </div>
   <div class="p-field">
     <label for="password">Password:</label>
-    <input pInputText id="password" type="password" />
+    <input pInputText #password id="password" type="password" />
   </div>
-  <p-button onclick="loginForm.submit()" label="Login"></p-button>
+  <p-button (onClick)="login($event, username, password)" label="Login"></p-button>
 </form>

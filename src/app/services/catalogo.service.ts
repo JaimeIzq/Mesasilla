@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //Importamos el modelo
-import { Silla } from '../services/silla';
+import { Producto } from './producto';
 //Importamos HttpClient
 import { HttpClient } from '@angular/common/http';
 //Nos traemos el objeto.
@@ -14,11 +14,11 @@ export class CatalogoService {
 
   constructor(private http: HttpClient) {}
 
-  getSillasProm() {
-    const promise = new Promise<Silla[]>((resolve, reject) => {
+  getProductosProm() {
+    const promise = new Promise<Producto[]>((resolve, reject) => {
       const apiURL = this.api + '/catalogo/productos';
       this.http
-			.get<Silla[]>(apiURL)
+			.get<Producto[]>(apiURL)
 			.subscribe({
 				next: (res: any) => {
 					resolve(res);
@@ -34,8 +34,8 @@ export class CatalogoService {
     return promise;
   }
 
-	getSillasObs() : Observable<Silla[]> {
+	getProductosObs() : Observable<Producto[]> {
 		const apiURL = this.api + '/catalogo/productos';
-    return this.http.get<Silla[]>(apiURL);
+    return this.http.get<Producto[]>(apiURL);
   }
 }

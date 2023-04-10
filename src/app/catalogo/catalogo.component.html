@@ -1,6 +1,6 @@
 <p-dataView
 	#dv
-	[value]="sillas"
+	[value]="productos"
 	[rows]="6"
 	[paginator]="true"
 	[layout]="layout"
@@ -25,13 +25,13 @@
 			</div>
 		</div>
 	</ng-template>
-	<ng-template let-silla pTemplate="listItem">
+	<ng-template let-producto pTemplate="listItem">
 		<div class="col-12">
 			<div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
 				<img
 					class="w-9 xl:w-10rem shadow-2 mx-auto border-round align-self-center"
-					[src]="silla.urlimagen"
-					[alt]="silla.nombre"
+					[src]="producto.urlimagen"
+					[alt]="producto.nombre"
 				/>
 				<div
 					class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4"
@@ -39,77 +39,77 @@
 					<div
 						class="flex flex-column align-items-center sm:align-items-start gap-3"
 					>
-						<div class="text-2xl font-bold text-900">{{ silla.nombre }}</div>
-						<p class="text-900 text-justify">{{ silla.descripcion }}</p>
+						<div class="text-2xl font-bold text-900">{{ producto.nombre }}</div>
+						<p class="text-900 text-justify">{{ producto.descripcion }}</p>
 						<p-rating
-							[(ngModel)]="silla.puntuacion"
+							[(ngModel)]="producto.puntuacion"
 							[readonly]="true"
 							[cancel]="false"
-							>silla.puntuacion</p-rating
+							>producto.puntuacion</p-rating
 						>
 						<div class="flex align-items-center gap-3">
-							<span class="flex align-items-center gap-2">
+							<span *ngIf="producto.categoria != null" class="flex align-items-center gap-2">
 								<i class="pi pi-tag"></i>
-								<span class="font-semibold">{{ silla.categoria }}</span>
+								<span class="font-semibold">{{ producto.categoria }}</span>
 							</span>
 							<p-tag
-								[value]="getStock(silla.cantidad)"
-								[severity]="getSeverity(silla.cantidad)"
+								[value]="getStock(producto.cantidad)"
+								[severity]="getSeverity(producto.cantidad)"
 							></p-tag>
 						</div>
 					</div>
 					<div
 						class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2"
 					>
-						<span class="text-2xl font-semibold">{{ "€" + silla.precio }}</span>
+						<span class="text-2xl font-semibold">{{ "€" + producto.precio }}</span>
 						<button
 							pButton
 							icon="pi pi-shopping-cart"
 							class="md:align-self-end mb-2 p-button-rounded"
-							[disabled]="silla.cantidad == 0"
+							[disabled]="producto.cantidad == 0"
 						></button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</ng-template>
-	<ng-template let-silla pTemplate="gridItem">
+	<ng-template let-producto pTemplate="gridItem">
 		<div class="col-12 sm:col-6 lg:col-12 xl:col-4 p-2">
 			<div class="p-4 border-1 surface-border surface-card border-round">
 				<div
 					class="flex flex-wrap align-items-center justify-content-between gap-2"
 				>
-					<span class="flex align-items-center gap-2">
+					<span *ngIf="producto.categoria != null" class="flex align-items-center gap-2">
 						<i class="pi pi-tag"></i>
-						<span class="font-semibold">{{ silla.categoria }}</span>
+						<span class="font-semibold">{{ producto.categoria }}</span>
 					</span>
 					<p-tag
-						[value]="getStock(silla.cantidad)"
-						[severity]="getSeverity(silla.cantidad)"
+						[value]="getStock(producto.cantidad)"
+						[severity]="getSeverity(producto.cantidad)"
 					></p-tag>
 				</div>
 				<div class="flex flex-column align-items-center gap-3 py-5">
 					<div class="flex min-h-16rem shadow-2 border-round">
 						<img
 							class="w-10 m-auto"
-							[src]="silla.urlimagen"
-							[alt]="silla.nombre"
+							[src]="producto.urlimagen"
+							[alt]="producto.nombre"
 						/>
 					</div>
-					<div class="text-2xl font-bold">{{ silla.nombre }}</div>
+					<div class="text-2xl font-bold">{{ producto.nombre }}</div>
 					<p-rating
-						[ngModel]="silla.puntuacion"
+						[ngModel]="producto.puntuacion"
 						[readonly]="true"
 						[cancel]="false"
 					></p-rating>
 				</div>
 				<div class="flex align-items-center justify-content-between">
-					<span class="text-2xl font-semibold">{{ "€" + silla.precio }}</span>
+					<span class="text-2xl font-semibold">{{ "€" + producto.precio }}</span>
 					<button
 						pButton
 						icon="pi pi-shopping-cart"
 						class="p-button-rounded"
-						[disabled]="silla.cantidad == 0"
+						[disabled]="producto.cantidad == 0"
 					></button>
 				</div>
 			</div>

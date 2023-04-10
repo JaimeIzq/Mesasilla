@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Input } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { Usuario } from './services/usuario';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,4 +17,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+	@Input() user?: Usuario;
+}

@@ -5,13 +5,33 @@
         <img src="assets/img/Mesasila_logo.png" height="40" class="mr-2" alt="logo"/>
         <h1>{{ title }}</h1>
       </div>
-    </ng-template>
-    <ng-template pTemplate="end">
-        <!-- <input type="text" pInputText placeholder="Search"> -->
-        <div class="inline-flex">
-          <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-info"></button>
-          <button pButton pRipple type="button" icon="pi pi-check-circle" class="p-button-rounded p-button-warning"></button>
-        </div>
-      </ng-template>
-  </p-menubar>
+		</ng-template>
+		<ng-template pTemplate="end">
+			<div *ngIf="!isLogged()" class="inline-flex">
+				<button pButton pRipple (click)="showDialog()" type="button" icon="pi pi-check-circle" class="p-button-rounded p-button-warning"></button>
+			</div>
+			<div *ngIf="isLogged()" class="inline-flex">
+				<p>Welcome back {{ getUsername() }}!</p>
+				<button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-info"></button>
+			</div>
+		</ng-template>
+	</p-menubar>
 </header>
+<p-dialog *ngIf="!isLogged()" header="Login | Register" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+  <div class="m-4">
+		<div class="grid justify-content-center">
+			<div class="col-4 flex align-self-start justify-content-center">
+				<app-login></app-login>
+			</div>
+			<div class="col-2">
+				<p-divider class="round" layout="vertical">
+					<b>OR</b>
+				</p-divider>
+			</div>
+			<div class="col-4 flex align-self-start justify-content-center">
+				<app-register></app-register>
+			</div>
+		</div>
+	</div>
+
+</p-dialog>

@@ -1,4 +1,4 @@
-export interface Silla {
+export interface Producto {
 	id: number;
 	nombre: string;
 	puntuacion: number;
